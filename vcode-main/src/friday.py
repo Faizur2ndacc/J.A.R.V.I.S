@@ -46,13 +46,13 @@ def wish():
     hour = int(datetime.datetime.now().hour)
 
     if hour>=0 and hour<12:
-        reply("Good Morning Lishanth!")
+        reply("Good Morning Sir!")
     elif hour>=12 and hour<18:
-        reply("Good Afternoon Lishanth!")   
+        reply("Good Afternoon Sir!")   
     else:
-        reply("Good Evening Lishanth!")  
+        reply("Good Evening Sir!")  
         
-    reply("I am Friday, What can i do for you!")
+    reply("I am Jarvis, What can i do for you!")
 
 # Set Microphone parameters
 with sr.Microphone() as source:
@@ -90,10 +90,10 @@ def respond(voice_data):
         wish()
 
     elif 'what is your name' in voice_data:
-        reply('My name is friday i am build by Lishanth!')
+        reply('My name is Jarvis i am build by Faizur!')
     
     elif 'i love you' in voice_data:
-        reply('I too love you Lishanth!')
+        reply('padai likhai pa dhyaan doo aur i.a  y. s banno')
 
     elif 'date' in voice_data:
         reply(today.strftime("%B %d, %Y"))
@@ -106,12 +106,12 @@ def respond(voice_data):
         url = 'https://google.com/search?q=' + voice_data.split('search')[1]
         try:
             webbrowser.get().open(url)
-            reply('This is what I found Lishanth')
+            reply('This is what I found Sir')
         except:
             reply('Please check your Internet')
 
     elif 'explain' in voice_data:
-        reply("don't warry Lishanth, I will explain for you!")
+        reply("don't worry Sir, I will explain for you!")
         reply('In this video let see the color changing effect with few lines of HTML and CSS')
     
     elif 'location' in voice_data:
@@ -122,12 +122,12 @@ def respond(voice_data):
         url = 'https://google.nl/maps/place/' + temp_audio + '/&amp;'
         try:
             webbrowser.get().open(url)
-            reply('This is what I found Lishanth')
+            reply('This is what I found Sir')
         except:
             reply('Please check your Internet')
 
     elif ('bye' in voice_data) or ('by' in voice_data):
-        reply("Good bye Lishanth! Have a nice day.")
+        reply("Good bye Sir! Have a nice day.")
         is_awake = False
 
     
